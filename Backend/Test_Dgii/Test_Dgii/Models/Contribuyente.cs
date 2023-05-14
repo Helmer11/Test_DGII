@@ -13,7 +13,7 @@ namespace Test_Dgii.Models
             conec = _conex;
         }
 
-        public DataTable getListaContribuyente( string RncCedula )
+        public DataTable getListaContribuyente( )
         {
             try
             {
@@ -22,7 +22,7 @@ namespace Test_Dgii.Models
                     DataTable dt = new DataTable();
                     SqlCommand cmd = new SqlCommand("Lista_Contribuyentes", conn);
                     cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@RncCedula", RncCedula);
+                    //cmd.Parameters.AddWithValue("@RncCedula", RncCedula);
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
                     da.Fill(dt);
                     conec.CerrarConexion();

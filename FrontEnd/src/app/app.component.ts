@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { AppService } from './app.service';
+import { Contribuyente } from 'src/Models/Contribuyente';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Test_Dgii';
+
+
+  constructor(){
+
+  }
+
+
+
+
+
+
+
+
 }

@@ -21,7 +21,7 @@ namespace Test_Dgii.Controllers
         }
 
         [HttpGet]
-        [Route("Comprobantes")]
+        [Route("api/Comprobantes")]
         public IActionResult getComprobanteLista(string rncCedula)
         {
             try

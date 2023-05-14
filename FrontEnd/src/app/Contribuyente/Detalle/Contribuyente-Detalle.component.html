@@ -1,0 +1,27 @@
+
+
+
+
+
+<div class="container pt-5">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Rnc/Cedula</th>
+              <th scope="col">Contribuyente</th>
+              <th scope="col">RNC</th>
+              <th scope="col">Monto</th>
+              <th scope="col">itbis</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let c of Comprobante" >
+              <th scope="row">{{c.RncCedula}}</th>
+              <td>{{c.Contribuyente_Nombre}}</td>
+              <td>{{c.NCF}}</td>
+              <td>{{c.Monto}}</td>
+              <td>{{c.Itbis18}}</td>
+            </tr>
+          </tbody>
+        </table>
+</div>

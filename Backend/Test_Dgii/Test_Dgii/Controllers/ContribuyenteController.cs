@@ -22,13 +22,13 @@ namespace Test_Dgii.Controllers
         }
 
         [HttpGet]
-        [Route("Lista")]
+        [Route("api/Lista")]
         // GET: ContribuyenteController
-        public IActionResult ListaContribuyente(string rncCedula)
+        public IActionResult ListaContribuyente()
         {
             try
             {
-                var lista = _contribuyente.getListaContribuyente(rncCedula);
+                var lista = _contribuyente.getListaContribuyente();
                 var json = JsonConvert.SerializeObject(lista);
 
                 return Ok(json);
