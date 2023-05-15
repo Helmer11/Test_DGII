@@ -12,16 +12,19 @@
               <th scope="col">RNC</th>
               <th scope="col">Monto</th>
               <th scope="col">itbis</th>
+              <th scope="col">Total</th>
             </tr>
           </thead>
-          <tbody>
-            <tr *ngFor="let c of Comprobante" >
+          <tbody *ngFor="let c of Comprobante" >
+            <tr  >
               <th scope="row">{{c.RncCedula}}</th>
               <td>{{c.Contribuyente_Nombre}}</td>
               <td>{{c.NCF}}</td>
-              <td>{{c.Monto}}</td>
+              <td>{{c.Monto | number: '3.1-2'}}</td>
               <td>{{c.Itbis18}}</td>
+              <td>{{c.Total_Itbis}}</td>
             </tr>
+
           </tbody>
         </table>
 </div>

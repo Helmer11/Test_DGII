@@ -30,6 +30,11 @@ namespace Test_Dgii.Models
                 }
             } catch (Exception ex)
             {
+                var comm = conec.AbrirConexion();
+                SqlCommand cmd = new SqlCommand("Error_Informacion_log", comm);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@MensajeError", ex.Message);
+                cmd.ExecuteNonQuery();
                 throw new Exception( ex.Message );
             }
 

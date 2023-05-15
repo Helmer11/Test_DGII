@@ -22,7 +22,6 @@ namespace Test_Dgii.Models
                     DataTable dt = new DataTable();
                     SqlCommand cmd = new SqlCommand("Lista_Contribuyentes", conn);
                     cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                    //cmd.Parameters.AddWithValue("@RncCedula", RncCedula);
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
                     da.Fill(dt);
                     conec.CerrarConexion();
@@ -30,6 +29,12 @@ namespace Test_Dgii.Models
                 }
             } catch(Exception ex)
             {
+                var comm = conec.AbrirConexion();
+                SqlCommand cmd = new SqlCommand("Error_Informacion_log", comm);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@MensajeError", ex.Message);
+                cmd.ExecuteNonQuery();
+                conec.CerrarConexion();
                 throw new Exception(ex.Message);
             }
         }
